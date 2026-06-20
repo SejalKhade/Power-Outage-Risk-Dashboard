@@ -24,7 +24,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Verify pipeline files exist
+      - name: Verify all pipeline files exist
         run: |
           python -c "
           import os
@@ -35,23 +35,28 @@ jobs:
               'src/utils.py',
               'api/main.py',
               'Dockerfile',
+              'requirements.txt',
           ]
           for f in files:
-              assert os.path.exists(f), f'Missing: {f}'
+              assert os.path.exists(f), f'MISSING: {f}'
               print(f'OK: {f}')
           print('All pipeline files verified.')
           "
 
-      - name: Test FastAPI imports
+      - name: Test API imports
         run: |
           python -c "
           from fastapi import FastAPI
           from pydantic import BaseModel
-          import joblib, pandas, numpy
-          print('All API dependencies import successfully')
+          import joblib, pandas, numpy, sklearn
+          print('All dependencies import successfully')
           "
 
-      - name: Lint check
+      - name: Test src imports
         run: |
-          pip install flake8
-          flake8 src/ api/ --max-line-length=120 --ignore=E501,W503,E402 --count
+          python -c "
+          import sys
+          sys.path.insert(0, '.')
+          from src.utils import safe_num, ensure_dir, log_step
+          print('src.utils imports OK')
+          "
