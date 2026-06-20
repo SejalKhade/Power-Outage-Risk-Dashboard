@@ -53,6 +53,8 @@ jobs:
           "
 
       - name: Test src imports
+      - name: Run unit tests
+        run: pytest tests/ -v
         run: |
           python -c "
           import sys
