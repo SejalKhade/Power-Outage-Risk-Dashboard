@@ -1,0 +1,15 @@
+artifact_uri: file:C:/Users/Admin/OneDrive/Desktop/power-outage-risk/mlruns/604966355104194971/f5aa6eecc32147298f38fd6dc55cc6cc/artifacts
+end_time: 1781388298336
+entry_point_name: ''
+experiment_id: '604966355104194971'
+lifecycle_stage: active
+run_id: f5aa6eecc32147298f38fd6dc55cc6cc
+run_name: HistGradientBoosting_Utility + Weather_Top 20%
+run_uuid: f5aa6eecc32147298f38fd6dc55cc6cc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1781388290734
+status: 3
+tags: []
+user_id: Admin

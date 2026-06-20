@@ -1,0 +1,15 @@
+artifact_uri: file:C:/Users/Admin/OneDrive/Desktop/power-outage-risk/mlruns/604966355104194971/ea2442b198cd44ea84622ddb3c440dfd/artifacts
+end_time: 1781388278081
+entry_point_name: ''
+experiment_id: '604966355104194971'
+lifecycle_stage: active
+run_id: ea2442b198cd44ea84622ddb3c440dfd
+run_name: Decision Tree_Utility + Weather_Top 20%
+run_uuid: ea2442b198cd44ea84622ddb3c440dfd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1781388272865
+status: 3
+tags: []
+user_id: Admin
