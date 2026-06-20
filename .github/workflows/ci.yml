@@ -53,8 +53,6 @@ jobs:
           "
 
       - name: Test src imports
-      - name: Run unit tests
-        run: pytest tests/ -v
         run: |
           python -c "
           import sys
@@ -62,3 +60,6 @@ jobs:
           from src.utils import safe_num, ensure_dir, log_step
           print('src.utils imports OK')
           "
+
+      - name: Run unit tests
+        run: pytest tests/ -v
