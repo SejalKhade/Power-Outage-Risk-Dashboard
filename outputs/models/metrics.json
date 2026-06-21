@@ -2,10 +2,10 @@
   "model": "Logistic Regression",
   "feature_set": "Utility + Weather",
   "threshold": "Top 20%",
-  "roc_auc": 0.6681,
-  "pr_auc": 0.3249,
-  "f1": 0.4456,
-  "precision": 0.3413,
+  "roc_auc": 0.667,
+  "pr_auc": 0.3222,
+  "f1": 0.4322,
+  "precision": 0.3258,
   "recall": 0.6418,
   "n_features": 26
 }

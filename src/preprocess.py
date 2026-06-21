@@ -54,6 +54,9 @@ KEEP_COLUMNS = [
     "State",
     "Ownership",
     "NERC Region",
+    "TRE", "FRCC", "MRO", "NPCC", "RFC",
+    "SERC", "SPP", "WECC", "CAISO", "ERCOT",
+    "PJM", "NYISO", "SPP.1", "MISO", "ISONE",
     "County_Count",
     "IEEE_AllEvents_SAIDI_min_per_yr",
     "IEEE_AllEvents_SAIFI_times_per_yr",
@@ -64,13 +67,13 @@ KEEP_COLUMNS = [
     "EVENT_TYPE",
     "MONTH_NAME",
     "MAGNITUDE",
-    "DAMAGE_PROPERTY",
-    "DAMAGE_CROPS",
+    "DAMAGE_PROPERTY_USD",
+    "DAMAGE_CROPS_USD",
     "INJURIES_DIRECT",
     "INJURIES_INDIRECT",
     "DEATHS_DIRECT",
     "DEATHS_INDIRECT",
-    "BEGIN_YEARMONTH",
+    "BEGIN_DATE_TIME",
 ]
 
 NUMERIC_COLS = [
@@ -208,8 +211,9 @@ def _clean_single_chunk(chunk: pd.DataFrame) -> pd.DataFrame:
         return df
 
     # 2. Convert damage strings to floats
-    for damage_col in ["DAMAGE_PROPERTY", "DAMAGE_CROPS"]:
+    for damage_col in ["DAMAGE_PROPERTY_USD", "DAMAGE_CROPS_USD"]:
         if damage_col in df.columns:
+            df[damage_col] = pd.to_numeric(df[damage_col], errors="coerce").fillna(0.0)
             new_col = damage_col + "_USD"
             df[new_col] = df[damage_col].apply(convert_damage_to_float)
 
@@ -248,3 +252,4 @@ if __name__ == "__main__":
     logger.info("States covered: %d", df["State"].nunique())
     logger.info("Output: %s", OUTPUT_PARQUET)
     logger.info("=" * 50)
+    
