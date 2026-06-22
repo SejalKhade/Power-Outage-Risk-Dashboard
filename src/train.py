@@ -308,7 +308,10 @@ def run_training() -> pd.DataFrame:
                         mlflow.log_metric("recall",    recall)
 
                         # Log model to MLflow
-                        mlflow.sklearn.log_model(pipe, "model")
+                        mlflow.sklearn.log_model(
+    pipe, "model",
+    serialization_format=mlflow.sklearn.SERIALIZATION_FORMAT_CLOUDPICKLE
+)
 
                         # Print progress line
                         print(
