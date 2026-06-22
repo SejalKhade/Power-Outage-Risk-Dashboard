@@ -25,7 +25,7 @@ That is the question this project answers. It combines EIA-861 reliability data 
 ## Screenshots
 
 ### Dashboard
-![Dashboard](docs/images/dashboard-map.png)
+![Dashboard](docs/images/dashboard.png)
 
 ### FastAPI — Swagger UI
 ![FastAPI Swagger](docs/images/api-swagger.png)
@@ -34,7 +34,7 @@ That is the question this project answers. It combines EIA-861 reliability data 
 ![FastAPI Predict](docs/images/api-predict.png)
 
 ### MLflow — 28 Experiments
-![MLflow](docs/images/mlflow-runs.png)
+![MLflow](docs/images/mlflow.png)
 
 ---
 
